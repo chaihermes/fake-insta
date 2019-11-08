@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>      
+  RewriteEngine On
+
+  # Página de contato
+  RewriteRule ^([a-z0-9-]+)/?$ index.php?$1 [NC,L]
+</IfModule>
+
+
+
+#esse arquivo pega o que o usuário digitar e monta o index.php? (que é necessário pra desenvolvedores pro site funcionar corretamente).
+#^([a-z0-9-]+)/? isso é uma expressão regular. Qualquer coisa digitada de a a z e de 0 a 9, ele pega isso e armazena numa variável e transforma em index.php? e pega o que ele digitou e acrescenta ($1).
