@@ -13,7 +13,7 @@
     <?php include "views/includes/header.php"; ?>
     <main class="board">
         <h1> Cadastro de novo Post </h1>
-        <form action="" method="POST" enctype="multipart/form-data"> <!-- atualizamos o formulário com os métodos de envio -->
+        <form action="/fake-insta/cadastrar-post" method="POST" enctype="multipart/form-data"> <!-- atualizamos o formulário com os métodos de envio -->
             <div class="form-group">
                 <label for="exampleFormControlFile1">Example file input</label>
                 <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">

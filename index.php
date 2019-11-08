@@ -4,7 +4,7 @@
     switch($rotas){      //qual controller vai usar
         case "posts":
             include "controllers/PostController.php";   //as classes devem ser no singular
-            $controller = new PostController();
+            $controller = new PostController();     //cria o objeto
             $controller->acao($rotas);          //pra acessar algo é sempre com seta magra
         break;
 
@@ -14,4 +14,8 @@
             $controller->acao($rotas);          //pra acessar algo é sempre com seta magra
         break;
 
+        case "cadastrar-post":
+            include "controllers/PostController.php";
+            $controller = new PostController();
+            $controller->acao($rotas);
     }
