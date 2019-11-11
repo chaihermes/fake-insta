@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="views/css/styles.css">
 </head>
 <body>
-    
-    <?php include "views/includes/header.php"; ?>
+    <!-- precisei trocar todas as pastas de links, retirando a views. Com a views os links nâo estavam funcionando. -->
+    <?php include "includes/header.php"; ?>
     <main class="board">
         <h1> Cadastro de novo Post </h1>
         <form action="/fake-insta/cadastrar-post" method="POST" enctype="multipart/form-data"> <!-- atualizamos o formulário com os métodos de envio -->

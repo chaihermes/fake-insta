@@ -6,7 +6,7 @@ include_once "models/Post.php";     //incluiu o Post para o controller saber ond
         public function acao($rotas){
             switch($rotas){   //qual ação vai tomar. O que fazer com a informação que o usuário que me deu.
                 case "posts":
-                    $this->viewPost();
+                    $this->listarPosts(); //aqui meio que chama os dois métodos ao mesmo tempo. Listar posts e view posts.
                 break;
                 case "formulario-post":
                     $this->viewFormularioPost();        //mostra a view do formulário
@@ -39,6 +39,15 @@ include_once "models/Post.php";     //incluiu o Post para o controller saber ond
 
             if($resultado){
                 header('Location:/fake-insta/posts');           //tá redirecionando pros posts.
+            } else {
+                echo "Não foi possível carregar a sua foto.";
             }
+        }
+
+        private function listarPosts(){
+            $post = new Post();
+            $listaPosts = $post->listarPosts();
+            $_REQUEST['posts'] = $listaPosts;    //a lista de posts vai pra dentro da super global request. A view recebe essas informações.
+            $this->viewPost();
         }
     }
