@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Novo Usuário</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="views/css/styles.css">
 </head>
 <body>
-    <!-- precisei trocar todas as pastas de links, retirando a views. Com a views os links nâo estavam funcionando. -->
+<!--Fomrulário para cadastro de novo Usuário-->
     <?php include "includes/header.php"; ?>
     <main class="board">
-        <h1> Cadastro de novo Post </h1>
-        <form action="/fake-insta/cadastrar-post" method="POST" enctype="multipart/form-data"> <!-- atualizamos o formulário com os métodos de envio -->
+        <h1> Cadastro de novo Usuário </h1>
+        <form action="/fake-insta/cadastrar-usuario" method="POST" enctype="multipart/form-data"> <!-- atualizamos o formulário com os métodos de envio -->
             <div class="form-group">
-                <label for="exampleFormControlFile1">Escolha sua foto</label>
-                <input type="file" class="form-control-file" name="img" id="exampleFormControlFile1">
+                <label for="nome">Nome de Usuário</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Insira seu nome de usuário">
             </div>
             <div class="form-group">
-                <label for="descricao">Descrição</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Insira uma descrição">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Insira seu e-mail">
             </div>
-            <button type="submit" class="btn btn-success">Postar</button>
+            <div class="form-group">
+                <label for="senha">Digite sua senha</label>
+                <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha">
+            </div>
+            <div class="form-group">
+                <label for="foto">Foto de Usuário</label>
+                <input type="file" class="form-control-file" name="profile_picture" id="imgUsuario">
+            </div>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
         </form>
 
     </main>

@@ -1,6 +1,6 @@
 <?php 
     class Conexao{              //criando a conexão com o banco de dados.
-        private $host = 'mysql:host=localhost;dbname=instagram;port=3307';
+        private $host = 'mysql:host=localhost;dbname=instagram;port=3306';
         private $user = 'root';
         private $password = '';
 
