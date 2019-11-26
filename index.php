@@ -21,20 +21,20 @@
         break;
 
         case "formulario-usuario":
-            include "controllers/PostController.php";
-            $controller = new PostController();
+            include "controllers/UsuarioController.php";
+            $controller = new UsuarioController();
             $controller->acao($rotas);
         break;
             
         case "cadastrar-usuario":
-            include "controllers/PostController.php";
-            $controller = new PostController();
+            include "controllers/UsuarioController.php";
+            $controller = new UsuarioController();
             $controller->acao($rotas);
         break;
         //Cria o caminho (rota) para o que foi digitado na URL pelo usuário. Aqui, pega o que foi digitado e envia para o controller, ele que vai dizer o que fazer com essa informação.
         case "login":
-            include "controllers/PostController.php";
-            $controller = new PostController();
+            include "controllers/UsuarioController.php";
+            $controller = new UsuarioController();
             $controller->acao($rotas);
         break;
     }

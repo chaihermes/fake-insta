@@ -16,12 +16,6 @@ include_once "Conexao.php";
             $resultado = $query->fetchAll(PDO::FETCH_OBJ);   //fetchAll traduz pro php. FETCH_OBJ retorna uma lista de objetos, ele transforma cada coluna em um atributo de objeto, diferentemente do ASSOC que retorna um array associativo.  Precisa acessar com seta.
             return $resultado; //o model gera a lista e manda pra quem for usar. Geralmente pro controller.
         }
-
-        public function criarUsuario($imagem, $nome){
-            $db = parent::criarConexao();
-            $query = $db->prepare("INSERT INTO posts (img, nome) values (?,?)");
-            return $query->execute([$imagem, $nome]);
-        }
     }
 
 
