@@ -13,7 +13,7 @@
     <?php include "includes/header.php"; ?>
     <main class="board">
         <h1> Faça seu Login </h1>
-        <form action="/fake-insta/login" method="POST" enctype="multipart/form-data"> <!-- atualizamos o formulário com os métodos de envio -->
+        <form action="/fake-insta/autenticar-login" method="POST" enctype="multipart/form-data"> <!-- atualizamos o formulário com os métodos de envio -->
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Insira seu e-mail">

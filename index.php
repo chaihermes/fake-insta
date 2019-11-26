@@ -32,9 +32,15 @@
             $controller->acao($rotas);
         break;
         //Cria o caminho (rota) para o que foi digitado na URL pelo usuário. Aqui, pega o que foi digitado e envia para o controller, ele que vai dizer o que fazer com essa informação.
-        case "login":
-            include "controllers/UsuarioController.php";
-            $controller = new UsuarioController();
+        case "form-login":
+            include "controllers/LoginController.php";
+            $controller = new LoginController();
+            $controller->acao($rotas);
+        break;
+
+        case "autenticar-login":
+            include "controllers/LoginController.php";
+            $controller = new LoginController();
             $controller->acao($rotas);
         break;
     }

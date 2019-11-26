@@ -1,7 +1,7 @@
 <?php
-//não entendi muito bem pra quê serve essa variável.
-$usuarios = $_REQUEST['usuarios'];
+session_start();
 
+$usuarios = $_REQUEST['usuarios'];
 ?>
 
 <!DOCTYPE html>

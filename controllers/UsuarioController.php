@@ -11,9 +11,7 @@ include_once "models/Usuario.php";
                 case "cadastrar-usuario":
                     $this->cadastroUsuario();
                 break;
-                case "login":
-                    $this->viewLogin();
-                break;
+                
                 //com a rota estabelecida na index, aqui no controller, está dizendo o que fazer com essa informação. A função vai dizer que é pra ir pra view e devolver a página solicitada ao usuário.
             }    
         }
@@ -29,7 +27,7 @@ include_once "models/Usuario.php";
             move_uploaded_file($linkTemp, $caminhoSalvo);       //salvamos o arquivo.
 
             $usuario = new Usuario();
-            $resultado = $usuario->criarUsuario($caminhoSalvo, $nome, $email, $senha);
+            $resultado = $usuario->criarUsuario($nome, $email, $senha, $caminhoSalvo);
 
             if($resultado){
                 //header('Location:/fake-insta/posts');          //tá redirecionando pros posts.
@@ -42,11 +40,4 @@ include_once "models/Usuario.php";
         private function viewFormularioUsuario(){
             include "views/newUsuario.php";
         }
-
-        private function viewLogin(){
-            include "views/login.php"; 
-        }
-
-
-
     }
