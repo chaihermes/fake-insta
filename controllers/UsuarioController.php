@@ -29,7 +29,7 @@ include_once "models/Usuario.php";
             $nome = $_POST['nome']; 
             $email = $_POST['email'];
             $senha = $_POST['senha'];
-
+            //NÃO CONSEGUI FAZER A SENHA CRIPTOGRAFADA FUNCIONAR, SE PUDEREM ME PASSAR DICAS, AGRADEÇO!!
             move_uploaded_file($linkTemp, $caminhoSalvo);       //salvamos o arquivo.
 
             $usuario = new Usuario();

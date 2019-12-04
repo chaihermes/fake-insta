@@ -31,23 +31,19 @@ include_once "models/Login.php";
             //recebendo dados do banco de dados:
             $email = $_POST['email'];
             $senha = $_POST['senha'];
-            //$senha = password_verify($_POST['senha']);
             //autenticando o usuário no banco de dados:
             $resultado = $login->autenticarUsuario($email, $senha);
-            //var_dump($resultado);
-            //$senhaVerificada = password_verify($_POST['senha'], $resultado[0]['senha']);
-            //pra testar a senha criptografada, cadastrar um novo usuário.
-
             
+
             if($resultado){
                 $_SESSION['usuarioNome'] = [$resultado[0]['nome']]; 
-                // var_dump([$resultado[0]['nome']]); ESTÁ RETORNANDO NULL
-                // exit;
-                //Aqui está buscando o campo nome dentro do array
+            //     // var_dump([$resultado[0]['nome']]); ESTÁ RETORNANDO NULL
+            //     // exit;
+            //     //Aqui está buscando o campo nome dentro do array
                 $_SESSION['usuarioId'] = [$resultado[0]['id']];     
-                // var_dump([$resultado[0]['id']]);    ESTÁ RETORNANDO NULL
-                // exit;  
-                //Aqui está buscando o id do usuário logado.
+            //     // var_dump([$resultado[0]['id']]);    ESTÁ RETORNANDO NULL
+            //     // exit;  
+            //     //Aqui está buscando o id do usuário logado.
                 header('Location:/fake-insta/posts');       
             } else {
                 echo "Fazer cadastro";

@@ -1,0 +1,6 @@
+Usuários cadastrados:
+
+E-mail: chaianah@gmail.com 	|| 	Senha: 123
+E-mail: pavlos@email.com	||	Senha: 987
+E-mail: daniel@email.com	||	Senha: 456
+E-mail: manu@email.com		||	Senha: 987

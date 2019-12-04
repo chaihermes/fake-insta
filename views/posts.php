@@ -22,9 +22,9 @@ $usuarioId = isset($_SESSION['usuarioId'])? $_SESSION['usuarioId'][0]:[];
 <body>
     
     <?php include "includes/header.php"; ?>
-    <main class="board">
+    <main class="board bg-light">
     <?php foreach($posts as $post): ?>
-        <div class="cardTotal card mt-5">
+        <div class="cardTotal card mt-5 bg-light">
             <!--Inclusão de foto e nome do usuário antes do post-->
             <div class="row">
                 <img id="profile_picture" src="<?php echo $post->profile_picture;?>" alt="ImagemPerfilUsuario">
