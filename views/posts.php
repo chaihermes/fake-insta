@@ -1,8 +1,14 @@
 <?php 
+$posts = $_REQUEST['posts']; 
+//var_dump($posts); //NOME E FOTO ESTÃO VINDO COMO NULL
+//exit;       
 
-$posts = $_REQUEST['posts'];        //lista de objetos sendo incluída na view.
-
+$usuarioId = isset($_SESSION['usuarioId'])? $_SESSION['usuarioId'][0]:[];
+// var_dump($usuarioId); ESTÁ RETORNANDO 1, COMO SE O USUARIO DE ID 1 ESTIVESSE LOGADO.
+// exit;
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +24,18 @@ $posts = $_REQUEST['posts'];        //lista de objetos sendo incluída na view.
     <?php include "includes/header.php"; ?>
     <main class="board">
     <?php foreach($posts as $post): ?>
-        <div class="card mt-5">
-            <img id="cardimg" src="<?php echo $post->img; ?>" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-text"><?php echo $post->descricao; ?></p>
+        <div class="cardTotal card mt-5">
+            <!--Inclusão de foto e nome do usuário antes do post-->
+            <div class="row">
+                <img id="profile_picture" src="<?php echo $post->profile_picture;?>" alt="ImagemPerfilUsuario">
+                <h4 id="nomeUsuario"><?php echo $post->nome;?></h4>
+            </div>
+            <!--Imagem e descrição do post-->
+            <div class="card">
+                <img id="cardimg" src="<?php echo $post->img; ?>" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"><?php echo $post->descricao; ?></p>
+                </div>
             </div>
         </div>
         <?php endforeach; ?>

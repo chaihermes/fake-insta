@@ -55,3 +55,23 @@ header {
 #cardimg {
     max-width: 100%;
 }
+
+#profile_picture {
+    border-radius: 65px;
+    width: 100px;
+    height: 100px;
+}
+
+#nomeUsuario{
+    margin-top: 33px;
+    margin-left: 10px;
+    color: darkblue;
+}
+
+.cardTotal{
+    border: none;
+}
+
+.logado{
+    margin-top: 8px;
+}

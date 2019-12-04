@@ -8,7 +8,8 @@ include_once "Conexao.php";
             $query = $db->prepare("SELECT * FROM usuarios WHERE email=? AND senha=?");
             $query->execute([$email, $senha]);
 
-            //verificação se a query deu certo. Se ela deu certo, for diferente de false, o resultado da query é transformada pelo fetchAll em array associativo.
+            //verificação se a query deu certo. Se ela deu certo, for diferente de false, o 
+            //resultado da query é transformada pelo fetchAll em array associativo.
             if($query != false){
                 $resultadoLogin = $query->fetchAll(PDO::FETCH_ASSOC);
             }

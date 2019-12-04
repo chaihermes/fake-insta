@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include_once "models/Usuario.php"; 
 
@@ -8,14 +9,19 @@ include_once "models/Usuario.php";
                 case "formulario-usuario":
                     $this->viewFormularioUsuario();
                 break;    
+
                 case "cadastrar-usuario":
                     $this->cadastroUsuario();
                 break;
-                
-                //com a rota estabelecida na index, aqui no controller, está dizendo o que fazer com essa informação. A função vai dizer que é pra ir pra view e devolver a página solicitada ao usuário.
             }    
         }
 
+
+        private function viewFormularioUsuario(){
+            include "views/newUsuario.php";
+        }
+
+        
         private function cadastroUsuario(){
             $nomeArquivo = $_FILES['profile_picture']['name'];
             $linkTemp = $_FILES['profile_picture']['tmp_name'];
@@ -30,14 +36,12 @@ include_once "models/Usuario.php";
             $resultado = $usuario->criarUsuario($nome, $email, $senha, $caminhoSalvo);
 
             if($resultado){
-                //header('Location:/fake-insta/posts');          //tá redirecionando pros posts.
-                echo "Cadastro com sucesso";
+                header('Location:/fake-insta/posts');       //tá redirecionando pros posts.
+                // echo "Cadastro com sucesso";
             } else {
                 echo "Não foi possível carregar a sua foto.";
             }
         }
 
-        private function viewFormularioUsuario(){
-            include "views/newUsuario.php";
-        }
+        
     }
